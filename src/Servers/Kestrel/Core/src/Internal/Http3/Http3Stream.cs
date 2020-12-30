@@ -125,7 +125,7 @@ namespace Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http3
         protected override void OnErrorAfterResponseStarted()
         {
             // We can no longer change the response, send a Reset instead.
-            var abortReason = new ConnectionAbortedException(CoreStrings.Http2StreamErrorAfterHeaders);
+            var abortReason = new ConnectionAbortedException(CoreStrings.Http3StreamErrorAfterHeaders);
             Abort(abortReason, Http3ErrorCode.InternalError);
         }
 
